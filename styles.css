@@ -1,0 +1,21 @@
+#modalWindow{
+    position: fixed;
+    background-color: red;
+    top: 200px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99999999999999;
+    transition: all 0.3s;
+}
+
+#modalWindowText{
+    position: fixed;
+    background-color: blue;
+    top: 200px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999999999;
+    /* transition: all 0.3s; */
+}
