@@ -59,59 +59,60 @@
 
   <div data-bs-spy="scroll" data-bs-target=".navbar" data-bs-smooth-scroll="true" tabindex="0">
 
-    <div id="modalWindow" style="visibility: hidden;">
-      <div>
-        <button onclick="openModalWindowText()">Texto</button>
-        <button>Imagen</button>
-        <button>Video</button>
-        <button>División</button>
-      </div>
-      <button>Cerrar</button>
-    </div>
+    <span id="modalWindow" draggable="true" ondragstart="dragStart(event)" style="visibility: hidden;">
+      <ul>
+        <li><button onclick="openModalWindowText()">Texto</button></li>
+        <li><button onclick="openModalWindowsImage">Imagen</button></li>
+        <li><button>Video</button></li>
+        <li><button>División</button></li>
+        <li><button onclick="closeModalWindow()">Cerrar</button></li>
+      </ul>
+      
+    </span>
 
     <div id="modalWindowText" style="visibility: hidden">
-      <div>
-        <label for="">Texto</label>
-        <input type="text">
-      </div>
-      <div>
-        <label for="">Color</label>
-        <input type="color">
-      </div>
-      <div>
-        <label for="">Color fondo</label>
-        <input type="color">
-      </div>
-      <div>
-        <label for="">Tamaño</label>
-        <input type="number">
-      </div>
-      <div>
-        <label for="">Posición</label>
-        <select name="" id="">
-          <option value="">Centro</option>
-          <option value="">Izquierda</option>
-          <option value="">Derecha</option>
-        </select>
-      </div>
-      <div>
-        <label for="">Fuente</label>
-        <select name="" id="">
-          <option value="">Arial</option>
-          <option value="">Times New Roman</option>
-          <option value="">Calibri</option>
-        </select>
-      </div>
-      <div>
-        <label for="">Negrita</label>
-        <input type="checkbox">
-      </div>
-      <button onclick="createText()">Guardar</button>
-      <button>Cerrar</button>
+    <div>
+      <label for="text">Texto</label>
+      <input type="text" id="text">
+    </div>
+    <div>
+      <label for="textColor">Color</label>
+      <input type="color" id="textColor">
+    </div>
+    <div>
+      <label for="backgroundColor">Color fondo</label>
+      <input type="color" id="backgroundColor">
+    </div>
+    <div>
+      <label for="fontSize">Tamaño</label>
+      <input type="number" id="fontSize">
+    </div>
+    <div>
+      <label for="position">Posición</label>
+      <select id="position">
+        <option value="center">Centro</option>
+        <option value="left">Izquierda</option>
+        <option value="right">Derecha</option>
+      </select>
+    </div>
+    <div>
+      <label for="font">Fuente</label>
+      <select id="font">
+        <option value="Arial">Arial</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Calibri">Calibri</option>
+      </select>
+    </div>
+    <div>
+      <label for="bold">Negrita</label>
+      <input type="checkbox" id="bold">
+    </div>
+    <button onclick="createText()">Guardar</button>
+    <button onclick="closeText()">Cerrar</button>
     </div>
 
     <div id="webpage">
-      asoijsaoij
+      
       
     </div>
 
