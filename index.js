@@ -39,6 +39,7 @@ function openModalWindow(){
     document.getElementById("modalWindow").style.visibility = "visible";
 }
 
+//text button
 function openModalWindowText(){
     console.log("openModalWindowText");
     document.getElementById("modalWindowText").style.visibility = "visible";
@@ -71,6 +72,43 @@ function createText() {
     document.getElementById("modalWindowText").style.visibility = "hidden";
   }
 
+  //image button
+
+  function openModalWindowImage(){
+    console.log("openModalWindowImage");
+    document.getElementById("modalWindowImage").style.visibility = "visible";
+}
+
+function createImage() {
+
+  const image = document.getElementById("image");
+  console.log(image);
+  const webpageDiv = document.getElementById("webpage");
+  let width = document.getElementById("width").value;
+  let height = document.getElementById("height").value;
+
+  image.addEventListener("change", (event) => {
+
+      const file = event.target.files[0];
+      console.log(file);
+      if (file) {
+        console.log('hola mundo');
+          const imageURL = URL.createObjectURL(file);
+
+          const imageElement = document.createElement("img");
+          imageElement.src = imageURL;
+          imageElement.width = width;
+          imageElement.height = height;  
+          imageElement.classList.add("selected-image");
+
+          webpageDiv.appendChild(imageElement);
+      }
+  });
+}
+
+function closeImage() {
+  document.getElementById("modalWindowImage").style.visibility = "hidden";
+}
 function saveWebpage(){
     console.log("saveWebpage");
     //se manda html a backend
